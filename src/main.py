@@ -25,6 +25,7 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
 
+        game_engine.handle_event(events)
         game_engine.update(dt)
         game_engine.draw(screen)
 
