@@ -7,14 +7,21 @@ class Entity(pygame.sprite.Sprite):
         self.image = image_surface
         self.rect = self.image.get_rect()
 
-        self.x = float(x)
-        self.y = float(y)
+        self.position = pygame.Vector2(float(x),float(y))
+        self.velocity = pygame.Vector2(float(0),float(0))
+        self.acceleration = 10
+        self.speed = 40
+        self.drag = 0.05
+        self.up = False
+        self.down = False
+        self.left = False
+        self.right = False
 
-        self.rect.topleft = (int(self.x),int(self.y))
+        self.rect.topleft = (int(self.position.x),int(self.position.y))
 
     def update(self,delta_time):
         pass
 
     def post_update(self):
-        self.rect.x = int(self.x)
-        self.rect.y = int(self.y)
+        self.rect.x = int(self.position.x)
+        self.rect.y = int(self.position.y)
