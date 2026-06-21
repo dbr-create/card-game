@@ -10,8 +10,10 @@ class GameObject(entity.Entity):
 
         self.name = name
         self.description = description
+        self.interacting = False
     def post_update(self):
         super().post_update()
-                    
+    def use(self,**kwargs):
+        pass  
 
     
